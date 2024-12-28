@@ -13,9 +13,9 @@ import {
 
 const Header = () => {
     return (
-        <nav className = "bg-card text-card-foreground border-b border-border shadow-md">
-            <div className="container mx-auto flex items-center justify-between p-4">
-                <a className="text-3xl font-bold cursor-pointer hover:underline">The Garbage Dump</a> 
+        <nav className = "text-card-foreground shadow-md bg-transparent">
+            <div className="container mx-auto flex items-center justify-between py-4">
+                <a className="text-4xl font-bold cursor-pointer hover:underline">The Garbage Dump</a> 
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
