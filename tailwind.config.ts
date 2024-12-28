@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import svgToUri from "mini-svg-data-uri";
 
 export default {
     darkMode: ["class"],
@@ -58,5 +59,11 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+
+  ],
 } satisfies Config;
+
+
+
+
