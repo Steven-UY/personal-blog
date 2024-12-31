@@ -22,6 +22,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let header = (
+    
+  )
   return (
     <html lang="en" className ="dark">
       <body
