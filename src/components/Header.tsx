@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -15,7 +16,9 @@ const Header = () => {
     return (
         <nav className = "text-card-foreground shadow-md bg-transparent">
             <div className="container mx-auto flex items-center justify-between py-4">
-                <a className="text-4xl font-bold cursor-pointer hover:underline">The Garbage Dump</a> 
+                <Link href={`/`}>
+                    <h1 className="text-4xl font-bold cursor-pointer hover:underline">The Garbage Dump</h1> 
+                </Link>
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>

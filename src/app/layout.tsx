@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header, Footer, Content } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,16 +23,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let header = (
-    
-  )
   return (
     <html lang="en" className ="dark">
       <body
-      //the layout.tsx page is essentially like the root of the application, as we see children wrapped in body tag
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className = "min-h-screen flex flex-col w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.2] px-44">
+        <Header></Header>
+        <main className="flex-grow">{children}</main>
+        <Footer></Footer>
+        </div>
       </body>
     </html>
   );
