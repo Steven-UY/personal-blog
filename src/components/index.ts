@@ -1,9 +1,10 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Content from "./Content";
+import PostCard from "./PostCard";
 
 export {
     Header,
-    Content,
-    Footer
+    PostCard,
+    Footer,
+
 }
