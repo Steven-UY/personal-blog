@@ -6,5 +6,4 @@ export {
     Header,
     PostCard,
     Footer,
-
 }

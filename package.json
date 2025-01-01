@@ -18,6 +18,7 @@
     "gra": "^1.2.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.469.0",
+    "markdown-to-jsx": "^7.7.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "15.1.2",
     "react": "^19.0.0",

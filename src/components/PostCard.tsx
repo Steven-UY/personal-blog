@@ -22,7 +22,7 @@ const PostCard: React.FC<PostCardProps> = ( {post} ) => {
         <Card> 
             <CardHeader>
                 <CardTitle>
-                <Link href={''}>
+                <Link href={`/post/${post.slug}`}>
                 <div className="postCard">
                     <h3>{post.title}</h3>
                     <p>{post.date}</p>
@@ -34,5 +34,4 @@ const PostCard: React.FC<PostCardProps> = ( {post} ) => {
     )
 }
 
-export default PostCard
-
+export default PostCard;
