@@ -16,7 +16,12 @@ function getPostContent(slug: string) {
     const file = folder + `${slug}.md`
     const content = fs.readFileSync(file, 'utf8')
 
+    console.log("Raw content: ", content)
+
     const matterResult = matter(content)
+
+    console.log("Matter result: ", matterResult)
+
     return matterResult
 }
 
@@ -34,13 +39,12 @@ export async function generateMetadata({ params, searchParams }: PostPage) {
 }
 
 export default async function PostPage(props: PostPage) {
-    const params = await props.params
+    const params = props.params
     const slug = params.slug
     const post = getPostContent(slug)
-    console.log(post)
     return (
         <main>
-            <article>
+            <article className="prose dark:prose-invert">
                 <Markdown>{post.content}</Markdown>
             </article>
         </main>

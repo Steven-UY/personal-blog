@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -33,22 +32,22 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --background: 0 0% 3.9%; /* Dark background */
+    --foreground: 0 0% 100%; /* White foreground (text) */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%; /* White text inside cards */
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
     --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
     --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
@@ -58,23 +57,33 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Apply white text to everything in dark mode */
+  .dark .prose {
+    --tw-prose-body: hsl(0, 0%, 100%); /* Paragraph text */
+    --tw-prose-headings: hsl(0, 0%, 100%); /* Headings text */
+    --tw-prose-links: hsl(220, 100%, 70%); /* Links in dark mode */
+    --tw-prose-bullets: hsl(0, 0%, 100%);
+    --tw-prose-code: hsl(220, 100%, 80%);
+  }
 }
 
-.postsContainer{
+.postsContainer {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
-.postCard{
+.postCard {
   padding: 24px;
+  border-radius: var(--radius);
+  @apply shadow-lg bg-card text-card-foreground;
+}
+
+article {
+  @apply prose prose-lg prose-headings:font-bold prose-p:leading-relaxed;
 }

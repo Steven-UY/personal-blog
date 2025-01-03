@@ -3,8 +3,6 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import getPostMetadata from "../../utils/getPostMetadata";
 
-
-
 export default function Home() {
   const postMetadata = getPostMetadata('posts');
   console.log(postMetadata);
