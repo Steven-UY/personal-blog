@@ -21,15 +21,19 @@ const PostCard: React.FC<PostCardProps> = ( {post} ) => {
     return (
         <Card> 
             <CardHeader>
-                <CardTitle>
-                <Link href={`/post/${post.slug}`}>
-                <div className="postCard">
-                    <h3>{post.title}</h3>
-                    <p>{post.date}</p>
+                <div>
+                    <CardTitle>{post.title}</CardTitle>
+                    <CardDescription>{post.date}</CardDescription>
                 </div>
+            </CardHeader>
+            <CardContent>
+                <p>My first post for whatever uhh this is...</p>
+            </CardContent>
+            <CardFooter>
+                <Link href = {`/post/${post.slug}`}>
+                    <button>View Post</button>
                 </Link>
-                </CardTitle>
-            </CardHeader>   
+            </CardFooter>
         </Card>
     )
 }

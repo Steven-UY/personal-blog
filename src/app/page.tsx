@@ -8,7 +8,7 @@ export default function Home() {
   console.log(postMetadata);
   return ( 
     <main>
-      <div className="postsContainer">
+      <div className="grid grid-cols-3 gap-8">
         {postMetadata.map((post, postIndex) => {
           return(
             <PostCard key={postIndex} post={post}></PostCard>
