@@ -11,9 +11,9 @@ export default function Home() {
     const dateA = normalizeDate(a.date);
     const dateB = normalizeDate(b.date);
     console.log('Comparing dates: ', dateA, dateB);
-    return dateA.getTime() - dateB.getTime();
+    return dateB.getTime() - dateA.getTime();
   });
-  
+
   return ( 
     <main>
       <div className="grid grid-cols-3 gap-8">
