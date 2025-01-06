@@ -14,7 +14,7 @@ import {
 
 const Header = () => {
     return (
-        <nav className = "text-card-foreground shadow-md bg-transparent">
+        <nav className = "text-card-foreground shadow-md">
             <div className="container mx-auto flex items-center justify-between py-4">
                 <Link href={`/`}>
                     <h1 className="text-4xl font-bold cursor-pointer hover:underline">The Garbage Dump</h1> 
@@ -23,12 +23,6 @@ const Header = () => {
                     <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuLink className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>About</NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>Blog</NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>Contact</NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
