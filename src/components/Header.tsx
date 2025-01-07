@@ -22,7 +22,11 @@ const Header = () => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>About</NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                            <Link href="/post/about" className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>
+                            About
+                            </Link>
+                        </NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>

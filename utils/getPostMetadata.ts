@@ -1,6 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 
+
 export default function getPostMetadata(basePath: string){
     const folder = basePath + '/';
     const files = fs.readdirSync(folder);
@@ -14,6 +15,7 @@ export default function getPostMetadata(basePath: string){
             title: matterResult.data.title,
             date: matterResult.data.date,
             slug: filename.replace('.md', ''),
+            hidden: matterResult.data.hidden
         }
     })
     return posts;

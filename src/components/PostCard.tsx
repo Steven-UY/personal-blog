@@ -13,7 +13,8 @@ type PostCardProps = {
     post: {
         title: string,
         date: string,
-        slug: string
+        slug: string,
+        hidden?: boolean,
     }
 }
 
