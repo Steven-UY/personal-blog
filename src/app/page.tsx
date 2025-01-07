@@ -17,8 +17,8 @@ export default function Home() {
     });
 
   return ( 
-    <main>
-      <div className="grid grid-cols-3 gap-8">
+    <main className = "container mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {visiblePosts.map((post, postIndex) => {
           return(
             <PostCard key={postIndex} post={post}></PostCard>
