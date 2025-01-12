@@ -5,3 +5,5 @@ hidden: true
 ---
 
 # About
+
+Hi welcome to my blog, what I write here please don't take seriously. Don't take me seriously, it's not worth it. Thanks. 

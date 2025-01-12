@@ -43,7 +43,7 @@ export default async function PostPage(props: PostPage) {
     const slug = params.slug
     const post = getPostContent(slug)
     return (
-        <main>
+        <main className = "container mx-auto flex flex-col sm:flex-row items-center justify-between py-4 space-y-4 sm:space-y-0">
             <article className="prose dark:prose-invert">
                 <Markdown>{post.content}</Markdown>
             </article>
