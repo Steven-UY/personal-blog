@@ -15,7 +15,7 @@ import {
 const Header = () => {
     return (
         <nav className = "text-card-foreground shadow-md">
-            <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-4 space-y-4 sm:space-y-0">
+            <div className="px-4 sm:px-6 md:px-8 lg:px-24 xl:px-44 flex flex-col sm:flex-row items-center justify-between py-4 space-y-4 sm:space-y-0">
                 <Link href={`/`}>
                     <h1 className="text-3xl sm:text-4xl font-bold cursor-pointer hover:underline">The Garbage Dump</h1> 
                 </Link>
@@ -24,7 +24,7 @@ const Header = () => {
                         <NavigationMenuItem>
                         <NavigationMenuLink asChild>
                             <Link href="/post/about" className={`${navigationMenuTriggerStyle()} cursor-pointer text-xl`}>
-                            About
+                                About
                             </Link>
                         </NavigationMenuLink>
                         </NavigationMenuItem>

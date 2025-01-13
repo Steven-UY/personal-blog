@@ -29,8 +29,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className = "min-h-screen flex flex-col w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.2]">
-          <div className = "px-4 sm:px-6 md:px-8 lg:px-24 xl:px-44"><Header></Header></div>
-            <main className="flex-grow px-4 sm:px-6 md:px-8 lg:px-24 xl:px-44 min-h-[150vh] py-10">{children}</main>
+            <div className="w-full bg-background/80 backdrop-blur-sm fixed top-0 z-50">
+              <Header></Header>
+            </div>
+            <main className="flex-grow px-4 sm:px-6 md:px-8 lg:px-24 xl:px-44 min-h-[150vh] py-32">{children}</main>
           <div className = "px-4 sm:px-6 md:px-8 lg:px-24 xl:px-44 border-t border-gray-200"><Footer></Footer></div>
         </div>
       </body>

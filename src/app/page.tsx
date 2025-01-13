@@ -3,6 +3,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import getPostMetadata from "../../utils/getPostMetadata";
 import { normalizeDate } from "../../utils/normalizeDate";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 
 export default function Home() {
