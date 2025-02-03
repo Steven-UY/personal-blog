@@ -43,7 +43,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col items-center sm:items-end text-sm">
-                    <p>A home for some ideas of mine. Maybe it'll be better than journaling.</p>
+                    <p>A home for some ideas of mine. Maybe it will be better than journaling.</p>
                 </div>
             </div>
         </footer>
