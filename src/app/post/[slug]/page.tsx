@@ -4,10 +4,12 @@ import getPostMetadata from "../../../../utils/getPostMetadata"
 import fs from 'fs'
 import matter from 'gray-matter'
 
-interface PostPage {
-    params: {
-        slug: string
-    };
+interface Params {
+  slug: string
+}
+
+interface PageProps {
+  params: Params
 }
 
 function getPostContent(slug: string) {
@@ -29,17 +31,15 @@ export const generateStaticParams = async () => {
     return posts.map((post) => ({ slug: post.slug}))
 }
 
-export async function generateMetadata({ params}: PostPage) {
-    const resolvedParams = await params
-    const id = resolvedParams?.slug ? ' * ' + resolvedParams?.slug: '' 
+export async function generateMetadata({ params }: PageProps) {
+    const id = params?.slug ? ' * ' + params.slug : '' 
     return {
         title: `The Garbage Dump ${id.replaceAll('-', ' ')}`,
     }
 }
 
-export default async function PostPage(props: PostPage) {
-    const params = props.params
-    const slug = params.slug
+export default async function PostPage(props: PageProps) {
+    const { slug } = props.params
     const post = getPostContent(slug)
     return (
         <div className="min-h-screen flex flex-col">
