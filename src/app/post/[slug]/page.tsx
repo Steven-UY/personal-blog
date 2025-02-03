@@ -8,7 +8,6 @@ interface PostPage {
     params: {
         slug: string
     };
-    searchParams: { [key: string]: string | string[] | undefined};
 }
 
 function getPostContent(slug: string) {
@@ -43,12 +42,14 @@ export default async function PostPage(props: PostPage) {
     const slug = params.slug
     const post = getPostContent(slug)
     return (
-        <main className = "container mx-auto">
-            <article className="prose dark:prose-invert max-w-none w-full">
-                <h1>{post.data.title}</h1>
-                <h2>{post.data.date}</h2>
-                <Markdown>{post.content}</Markdown>
-            </article>
-        </main>
+        <div className="min-h-screen flex flex-col">
+            <main className="container mx-auto flex-grow">
+                <article className="prose dark:prose-invert max-w-none w-full">
+                    <h1>{post.data.title}</h1>
+                    <h3 className="-mt-4">{post.data.date}</h3>
+                    <Markdown>{post.content}</Markdown>
+                </article>
+            </main>
+        </div>
     )
 }
