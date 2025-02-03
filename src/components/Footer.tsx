@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Footer = () => { 
     return (
@@ -18,10 +19,11 @@ const Footer = () => {
                         <li>
                             <a href="https://github.com/Steven-UY" 
                                className="flex items-center gap-2 hover:underline">
-                                <img src="/assets/Github_Light.png" 
-                                     alt="GitHub"
-                                     width={20}
-                                     height={20}
+                                <Image 
+                                    src="/assets/Github_Light.png" 
+                                    alt="GitHub"
+                                    width={20}
+                                    height={20}
                                 />
                                 <span>slicko</span>
                             </a>
@@ -29,10 +31,11 @@ const Footer = () => {
                         <li>
                             <a href="https://www.linkedin.com/in/steven-c-uy/" 
                                className="flex items-center gap-2 hover:underline">
-                                <img src="/assets/linkedin.png" 
-                                     alt="LinkedIn"
-                                     width={20}
-                                     height={20}
+                                <Image 
+                                    src="/assets/linkedin.png" 
+                                    alt="LinkedIn"
+                                    width={20}
+                                    height={20}
                                 />
                                 <span>Steven Uy</span>
                             </a>
