@@ -29,7 +29,7 @@ export const generateStaticParams = async () => {
     return posts.map((post) => ({ slug: post.slug}))
 }
 
-export async function generateMetadata({ params, searchParams }: PostPage) {
+export async function generateMetadata({ params}: PostPage) {
     const resolvedParams = await params
     const id = resolvedParams?.slug ? ' * ' + resolvedParams?.slug: '' 
     return {
