@@ -1,39 +1,42 @@
 import React from "react";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../../utils/getPostMetadata";
-import fs from 'fs';
-import matter from 'gray-matter';
+import fs from "fs";
+import matter from "gray-matter";
 
 function getPostContent(slug: string) {
-  const folder = 'posts/';
+  const folder = "posts/";
   const file = folder + `${slug}.md`;
-  const content = fs.readFileSync(file, 'utf8');
-
-  console.log("Raw content: ", content);
+  const content = fs.readFileSync(file, "utf8");
 
   const matterResult = matter(content);
-
-  console.log("Matter result: ", matterResult);
-
   return matterResult;
 }
 
 export const generateStaticParams = async () => {
-  const posts = getPostMetadata('posts');
+  const posts = getPostMetadata("posts");
   return posts.map((post) => ({ slug: post.slug }));
 };
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
-  // If necessary, you can perform an await on params if they are a promise:
-  // const { slug } = await params;
-  const id = slug ? ' * ' + slug : ''; 
+// Notice that we allow params to be either a plain object or a promise that resolves to that object.
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>;
+}) {
+  const { slug } = await params; // safe whether params is a promise or not
+  const id = slug ? " * " + slug : "";
   return {
-    title: `The Garbage Dump ${id.replaceAll('-', ' ')}`,
+    title: `The Garbage Dump ${id.replaceAll("-", " ")}`,
   };
 }
 
-export default async function PostPage({ params: { slug } }: { params: { slug: string } }) {
-  // Again, if params might be a promise, do: const { slug } = await params;
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   const post = getPostContent(slug);
   return (
     <div className="min-h-screen flex flex-col">
